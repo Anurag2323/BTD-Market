@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print Product Catalog</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="print-container">
+        <header class="header">
+            <img src="{{ url_for('static', filename='css/logob.png') }}" alt="Company Logo" class="company-logo">
+            <div class="company-info">
+                <p>Phone: (123) 456-7890</p>
+                <p>Address: 1234 Main St, City, State, ZIP</p>
+                <p>Email: info@company.com</p>
+            </div>
+        </header>
+        <h1>Product Catalog</h1>
+        <div id="printCatalog" class="product-grid">
+            {% for product in products %}
+            <div class="product-item">
+                <img src="{{ product[2] }}" alt="{{ product[1] }}" class="product-img">
+                <div class="product-details">
+                    <p><strong>{{ product[1] }}</strong></p>
+                    <p>Price: ${{ product[3] }}</p>
+                    <p>Unit Price: ${{ product[5] }}</p>
+                    <p>Units: {{ product[4] }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <button onclick="window.print()">Print</button>
+    </div>
+</body>
+</html>
