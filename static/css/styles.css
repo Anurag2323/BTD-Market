@@ -37,7 +37,8 @@ label {
 input[type="text"],
 input[type="number"],
 input[type="file"],
-input[type="url"] {
+input[type="url"],
+input[type="password"] {
     width: 100%;
     padding: 0.5rem;
     border: 1px solid #ccc;
@@ -155,11 +156,24 @@ button:hover {
 }
 
 .company-logo {
-    max-height: 80px;
-    max-width: 150px;
+    max-height: 200px;
+    max-width: 300px;
     object-fit: contain;
 }
 
 .company-info {
     text-align: right;
+}
+
+/* Advertisement Styles */
+.advertisement-container, .advertisement-preview {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.advertisement-img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
